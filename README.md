@@ -7,7 +7,7 @@
 ## 材料
 (1) Arduino Nano  
 (2) MPU9250  
-(3) 0.96吋OLED (128*64)  
+(3) 0.96吋OLED (128x64)  
 (4) DS3231時鐘  
 (5) SPI Nor Flash (Mxic or Winbond)(1Gb)  
 (6) 3D列印外殼 (https://www.thingiverse.com/thing:4861300)  
@@ -19,7 +19,7 @@ https://github.com/adafruit/Adafruit_SSD1306
 https://github.com/Marzogh/SPIMemory  
 
 ## 注意
-(1) 螢幕解析度實際上只用到128*32，因為使用128*64，Arduino會記憶體不足  
+(1) 螢幕解析度實際上只用到128x32，因為使用128x64，Arduino會記憶體不足  
 (2) 預設每0.2秒會記錄一筆資料，可以連續紀錄約9天，超過會自動回頭覆蓋，就像行車紀錄器  
 (3) Nor Flash 製作成可拆卸式的，需要讀取紀錄的時候，拆下來去另外一個裝置讀取  
 (4) 我手上的這顆MPU9250的AD0必須上拉(可能有損壞)，上拉後I2C地址變成0x69  
