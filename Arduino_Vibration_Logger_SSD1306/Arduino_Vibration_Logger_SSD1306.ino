@@ -9,9 +9,6 @@
 #define SCREEN_HEIGHT 32 //用64的話會記憶體不足
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-int iNowXPosition = 4;
-int iLastY=0;
-
 #include "MPU9250_asukiaaa.h"
 MPU9250_asukiaaa mySensor;
 float gX, gY, gZ;
@@ -34,6 +31,9 @@ char textAdr[ARRSZ];
 #define TIME_INTERVAL 200  //每0.2秒記錄一筆資料
 unsigned long lastWriteTime = 0;  
 
+int iNowXPosition = 4;
+int iLastY=0;
+
 void setup() {
   Serial.begin(115200);
   clock.begin();
@@ -42,18 +42,17 @@ void setup() {
   gAdr = findIdxOfFlash();
   delay(100);  
    
-  mySensor.beginAccel();
+  //mySensor.beginAccel();
   mySensor.beginGyro();
-  mySensor.beginMag();
+  //mySensor.beginMag();
 
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
-  eraseScreen(); 
+  initialScreen(); 
   display.display();
 
 }
 
-void loop() {
- 
+void loop() { 
   getSensorValue();
   //Serial.print(F("gValue: "));  Serial.println(gValue);
   
@@ -69,7 +68,8 @@ void loop() {
   iNowXPosition++;  
   if(iNowXPosition>=128){
     iNowXPosition = 4;
-    //eraseScreen();
+    eraseVLine(iNowXPosition, 5);
+    //initialScreen();
   }
   else{
     eraseVLine(iNowXPosition, 5);
@@ -89,12 +89,14 @@ void eraseVLine(int x, int w){
   int H = SCREEN_HEIGHT-1;
   int MH = SCREEN_HEIGHT/2;
   for(int i=0; i<w; i++){
-    display.drawFastVLine(x+i, 0, MH-1, BLACK);
-    display.drawFastVLine(x+i, MH+1, H, BLACK);
+    //display.drawFastVLine(x+i, 0, MH-1, BLACK);
+    //display.drawFastVLine(x+i, MH+1, H-1, BLACK);
+    display.drawFastVLine(x+i, 0, MH, BLACK);
+    display.drawFastVLine(x+i, MH+1, MH, BLACK);
   }
 }
 
-void eraseScreen(){
+void initialScreen(){
   int H = SCREEN_HEIGHT-1;
   int W = SCREEN_WIDTH-1;
   int MH = SCREEN_HEIGHT/2;
@@ -115,15 +117,6 @@ void eraseScreen(){
     display.drawFastHLine(0, y, 3, WHITE);
   }  
   
-}
-
-int digitalMapToY(int y){
-  if(y==HIGH){
-    return 0;
-  }
-  else{
-    return 16;
-  }
 }
 
 void getSensorValue(){
