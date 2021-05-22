@@ -21,7 +21,8 @@ https://github.com/Marzogh/SPIMemory
 ## 注意
 (1) 螢幕解析度實際上只用到128*32，因為使用128*64，Arduino會記憶體不足  
 (2) 預設每0.2秒會記錄一筆資料，可以連續紀錄約9天，超過會自動回頭覆蓋，就像行車紀錄器  
-(3) 我手上的這顆MPU9250的AD0必須上拉(可能有損壞)，上拉後I2C地址變成0x69  
+(3) Nor Flash 製作成可拆卸式的，需要讀取紀錄的時候，拆下來去另外一個裝置讀取  
+(4) 我手上的這顆MPU9250的AD0必須上拉(可能有損壞)，上拉後I2C地址變成0x69  
     (若沒有上拉，I2C地址是0x68)  
 
 ![image](https://github.com/Chihhao/Arduino_Vibration_Logger_SSD1306/blob/main/image/wiring.png)
