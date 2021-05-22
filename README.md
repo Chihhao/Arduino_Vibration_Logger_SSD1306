@@ -12,6 +12,12 @@
 (5) SPI Nor Flash (Mxic or Winbond)(1Gb)  
 (6) 3D列印外殼 (https://www.thingiverse.com/thing:4861300)  
 
+## 有用到的函式庫 (已包含，不須額外安裝)
+https://github.com/asukiaaa/MPU9250_asukiaaa  
+https://github.com/jarzebski/Arduino-DS3231  
+https://github.com/adafruit/Adafruit_SSD1306  
+https://github.com/Marzogh/SPIMemory  
+
 ## 注意
 (1) 螢幕解析度實際上只用到128*32，因為使用128*64，Arduino會記憶體不足  
 (2) 預設每0.2秒會記錄一筆資料，可以連續紀錄約9天，超過會自動回頭覆蓋，就像行車紀錄器  
