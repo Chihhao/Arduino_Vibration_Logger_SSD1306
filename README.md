@@ -1,7 +1,7 @@
 # Arduino_Vibration_Logger_SSD1306 (震動紀錄器)
 ## 利用 MPU9250 的陀螺儀當作震動偵測器
 
-效果如下
+## 成品如下
 ![image](https://github.com/Chihhao/Arduino_Vibration_Logger_SSD1306/blob/main/image/IMG_2965.jpg)
 
 ## 材料
@@ -15,11 +15,15 @@
 (1) thingiverse: https://www.thingiverse.com/thing:4861300  
 (2) tinkercad: https://www.tinkercad.com/things/eZMaNDogAWy  
 
-## 有用到的函式庫 (已包含，不須額外安裝)
+## 函式庫 
+(1) 請複製library目錄中的所有資料到Arduino的library目錄 (ex: C:\Users\USERNAME\Documents\Arduino\libraries)  
+(2) 或者可以自行下載，網址如下  
 https://github.com/asukiaaa/MPU9250_asukiaaa  
 https://github.com/jarzebski/Arduino-DS3231  
 https://github.com/adafruit/Adafruit_SSD1306  
 https://github.com/Marzogh/SPIMemory  
+https://github.com/adafruit/Adafruit-GFX-Library
+https://github.com/adafruit/Adafruit_BusIO  
 
 ## 注意
 (1) 螢幕解析度實際上只用到128x32，因為使用128x64，Arduino會記憶體不足  

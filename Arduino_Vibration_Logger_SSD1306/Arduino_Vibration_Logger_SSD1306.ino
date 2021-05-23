@@ -2,14 +2,16 @@
 //https://github.com/jarzebski/Arduino-DS3231
 //https://github.com/adafruit/Adafruit_SSD1306
 //https://github.com/Marzogh/SPIMemory
+//https://github.com/adafruit/Adafruit-GFX-Library
+//https://github.com/adafruit/Adafruit_BusIO
 
-#include "Adafruit_SSD1306.h"
+#include <Adafruit_SSD1306.h>
 #define OLED_RESET    4
 #define SCREEN_WIDTH 128 
 #define SCREEN_HEIGHT 32 //用64的話會記憶體不足
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-#include "MPU9250_asukiaaa.h"
+#include <MPU9250_asukiaaa.h>
 MPU9250_asukiaaa mySensor;
 float gX, gY, gZ;
 float gShiftX=1.65;
@@ -17,12 +19,12 @@ float gShiftY=0.9;
 float gShiftZ=0.1;
 float gValue;
 
-#include "DS3231.h"
+#include <DS3231.h>
 DS3231 clock;
 RTCDateTime dt;
 char caRealTime[16];
 
-#include "SPIMemory.h"
+#include <SPIMemory.h>
 SPIFlash flash;
 #define CAPA 134217728   //128M
 #define ARRSZ 32
