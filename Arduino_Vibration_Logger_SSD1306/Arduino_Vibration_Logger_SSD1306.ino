@@ -127,7 +127,7 @@ void getSensorValue(){
     gZ = mySensor.gyroZ();
   }
   gValue = (gX+gY+gZ)/3.0;
-  gValue = map(gValue, -20, 20, 0, SCREEN_HEIGHT-1);
+  gValue = map(gValue, -20, 20, 0, SCREEN_HEIGHT);
 }
 
 void getRealTime(){
