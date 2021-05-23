@@ -22,7 +22,7 @@ https://github.com/asukiaaa/MPU9250_asukiaaa
 https://github.com/jarzebski/Arduino-DS3231  
 https://github.com/adafruit/Adafruit_SSD1306  
 https://github.com/Marzogh/SPIMemory  
-https://github.com/adafruit/Adafruit-GFX-Library
+https://github.com/adafruit/Adafruit-GFX-Library  
 https://github.com/adafruit/Adafruit_BusIO  
 
 ## 注意
